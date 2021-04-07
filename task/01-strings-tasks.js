@@ -131,9 +131,9 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-    throw new Error('Not implemented');
+    return str.replace(value, '');
 }
-
+// console.log(removeFirstOccurrences('I like legends', 'end'));
 /**
  * Remove the first and last angle brackets from tag string
  *
