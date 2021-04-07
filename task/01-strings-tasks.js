@@ -148,7 +148,7 @@ function unbracketTag(str) {
     return str.replace(/[{(<>)}]/g, '');
 }
 
-// console.log(unbracketTag('<div>'));
+
 
 /**
  * Converts all characters of the specified string into the upper case
@@ -164,7 +164,7 @@ function convertToUpperCase(str) {
     return str.toUpperCase();
 }
 
-// console.log(convertToUpperCase('Thunderstruck'));
+
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
@@ -179,7 +179,6 @@ function extractEmails(str) {
     return str.split(";");
 }
 
-// console.log(extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'));
 /**
  * Returns the string representation of rectangle with specified width and height
  * using pseudograhic chars
@@ -256,7 +255,6 @@ function getRectangleString(width, height) {
     return string;
 }
 
-// console.log(getRectangleString(6,4));
 
 /**
  * Encode specified string with ROT13 cipher
@@ -288,7 +286,6 @@ function encodeToRot13(str) {
     return result;
 }
 
-// console.log(encodeToRot13('Why did the chicken cross the road?'));
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -304,7 +301,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    if (typeof value === 'string') {
+    if (typeof value === 'string' || value instanceof String) {
         return true;
     } else {
         return false;
@@ -336,9 +333,10 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    throw new Error('Not implemented');
+    const symbols = 'A♣,2♣,3♣,4♣,5♣,6♣,7♣,8♣,9♣,10♣,J♣,Q♣,K♣,A♦,2♦,3♦,4♦,5♦,6♦,7♦,8♦,9♦,10♦,J♦,Q♦,K♦,A♥,2♥,3♥,4♥,5♥,6♥,7♥,8♥,9♥,10♥,J♥,Q♥,K♥,A♠,2♠,3♠,4♠,5♠,6♠,7♠,8♠,9♠,10♠,J♠,Q♠,K♠';
+    const symbolsArr = symbols.split(',')
+    return symbolsArr.indexOf(value)
 }
-
 
 module.exports = {
     concatenateStrings: concatenateStrings,
