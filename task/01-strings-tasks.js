@@ -202,9 +202,58 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    throw new Error('Not implemented');
-}
 
+    let string = '';
+    for (let i = 1; i <= height;  i++) {
+        for (let j = 1; j <= width; j++) {
+            let symbol = ' '
+
+            const isTopSide = i === 1;
+            const isBottomSide = i === height;
+
+            const isBeginOfLine = j === 1;
+            const isEndOfLine =  j === width;
+
+            const isTopLeftAngle = isTopSide && isBeginOfLine;
+            const isTopRightAngle = isTopSide && isEndOfLine;
+
+            const isBottomLeftAngle = isBottomSide && isBeginOfLine;
+            const isBottomRightAngle = isBottomSide && isEndOfLine;
+
+            if (isTopSide || isBottomSide) {
+                symbol = '─'
+            }
+
+            if (isBeginOfLine || isEndOfLine) {
+                symbol = '│'
+            }
+
+            if (isTopLeftAngle) {
+                symbol = '┌'
+            }
+
+            if (isTopRightAngle) {
+                symbol = '┐'
+            }
+
+            if (isBottomLeftAngle) {
+                symbol = '└'
+            }
+
+            if (isBottomRightAngle) {
+                symbol = '┘'
+            }
+
+            if (isEndOfLine) {
+                symbol += '\n'
+            }
+
+            string += symbol
+        }
+    }
+    return string;
+}
+// console.log(getRectangleString(6,4));
 
 /**
  * Encode specified string with ROT13 cipher
@@ -272,20 +321,20 @@ function getCardId(value) {
 }
 
 
-module.exports = {
-    concatenateStrings: concatenateStrings,
-    getStringLength: getStringLength,
-    getStringFromTemplate: getStringFromTemplate,
-    extractNameFromTemplate: extractNameFromTemplate,
-    getFirstChar: getFirstChar,
-    removeLeadingAndTrailingWhitespaces: removeLeadingAndTrailingWhitespaces,
-    repeatString: repeatString,
-    removeFirstOccurrences: removeFirstOccurrences,
-    unbracketTag: unbracketTag,
-    convertToUpperCase: convertToUpperCase,
-    extractEmails: extractEmails,
-    getRectangleString: getRectangleString,
-    encodeToRot13: encodeToRot13,
-    isString: isString,
-    getCardId: getCardId
-};
+// module.exports = {
+//     concatenateStrings: concatenateStrings,
+//     getStringLength: getStringLength,
+//     getStringFromTemplate: getStringFromTemplate,
+//     extractNameFromTemplate: extractNameFromTemplate,
+//     getFirstChar: getFirstChar,
+//     removeLeadingAndTrailingWhitespaces: removeLeadingAndTrailingWhitespaces,
+//     repeatString: repeatString,
+//     removeFirstOccurrences: removeFirstOccurrences,
+//     unbracketTag: unbracketTag,
+//     convertToUpperCase: convertToUpperCase,
+//     extractEmails: extractEmails,
+//     getRectangleString: getRectangleString,
+//     encodeToRot13: encodeToRot13,
+//     isString: isString,
+//     getCardId: getCardId
+// };
