@@ -133,7 +133,7 @@ function repeatString(value, count) {
 function removeFirstOccurrences(str, value) {
     return str.replace(value, '');
 }
-// console.log(removeFirstOccurrences('I like legends', 'end'));
+
 /**
  * Remove the first and last angle brackets from tag string
  *
@@ -146,9 +146,9 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    throw new Error('Not implemented');
+    return str.replace(/[{(<>)}]/g, '');
 }
-
+// console.log(unbracketTag('<div>'));
 
 /**
  * Converts all characters of the specified string into the upper case
