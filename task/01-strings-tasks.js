@@ -8,7 +8,6 @@
  ********************************************************************************************/
 
 
-
 /**
  * Returns the result of concatenation of two strings.
  *
@@ -120,7 +119,7 @@ function repeatString(value, count) {
 
 /**
  * Remove the first occurrence of string inside another string
- * 
+ *
  * @param {string} str
  * @param {string} value
  * @return {string}
@@ -148,6 +147,7 @@ function removeFirstOccurrences(str, value) {
 function unbracketTag(str) {
     return str.replace(/[{(<>)}]/g, '');
 }
+
 // console.log(unbracketTag('<div>'));
 
 /**
@@ -163,6 +163,7 @@ function unbracketTag(str) {
 function convertToUpperCase(str) {
     return str.toUpperCase();
 }
+
 // console.log(convertToUpperCase('Thunderstruck'));
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
@@ -177,6 +178,7 @@ function convertToUpperCase(str) {
 function extractEmails(str) {
     return str.split(";");
 }
+
 // console.log(extractEmails('angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'));
 /**
  * Returns the string representation of rectangle with specified width and height
@@ -204,7 +206,7 @@ function extractEmails(str) {
 function getRectangleString(width, height) {
 
     let string = '';
-    for (let i = 1; i <= height;  i++) {
+    for (let i = 1; i <= height; i++) {
         for (let j = 1; j <= width; j++) {
             let symbol = ' '
 
@@ -212,7 +214,7 @@ function getRectangleString(width, height) {
             const isBottomSide = i === height;
 
             const isBeginOfLine = j === 1;
-            const isEndOfLine =  j === width;
+            const isEndOfLine = j === width;
 
             const isTopLeftAngle = isTopSide && isBeginOfLine;
             const isTopRightAngle = isTopSide && isEndOfLine;
@@ -253,6 +255,7 @@ function getRectangleString(width, height) {
     }
     return string;
 }
+
 // console.log(getRectangleString(6,4));
 
 /**
@@ -271,8 +274,21 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    var input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    var output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+
+    const strArr = str.split('');
+    const decodeArr = strArr.map(function (letter) {
+        const letterIndex = input.indexOf(letter);
+        const decodedLetter = letterIndex > -1 ? output[letterIndex] : letter;
+        return decodedLetter;
+    })
+
+    const result = decodeArr.join('');
+    return result;
 }
+
+// console.log(encodeToRot13('Why did the chicken cross the road?'));
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -294,23 +310,23 @@ function isString(value) {
 
 /**
  * Returns playid card id.
- * 
+ *
  * Playing cards inittial deck inclides the cards in the following order:
- * 
+ *
  *  'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
  *  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
  *  'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
  *  'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'
- * 
+ *
  * (see https://en.wikipedia.org/wiki/Standard_52-card_deck)
  * Function returns the zero-based index of specified card in the initial deck above.
- * 
+ *
  * @param {string} value
  * @return {number}
  *
  * @example
  *   'A♣' => 0
- *   '2♣' => 1 
+ *   '2♣' => 1
  *   '3♣' => 2
  *     ...
  *   'Q♠' => 50
