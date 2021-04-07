@@ -161,9 +161,9 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-    throw new Error('Not implemented');
+    return str.toUpperCase();
 }
-
+// console.log(convertToUpperCase('Thunderstruck'));
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
