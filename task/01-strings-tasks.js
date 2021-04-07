@@ -321,20 +321,20 @@ function getCardId(value) {
 }
 
 
-// module.exports = {
-//     concatenateStrings: concatenateStrings,
-//     getStringLength: getStringLength,
-//     getStringFromTemplate: getStringFromTemplate,
-//     extractNameFromTemplate: extractNameFromTemplate,
-//     getFirstChar: getFirstChar,
-//     removeLeadingAndTrailingWhitespaces: removeLeadingAndTrailingWhitespaces,
-//     repeatString: repeatString,
-//     removeFirstOccurrences: removeFirstOccurrences,
-//     unbracketTag: unbracketTag,
-//     convertToUpperCase: convertToUpperCase,
-//     extractEmails: extractEmails,
-//     getRectangleString: getRectangleString,
-//     encodeToRot13: encodeToRot13,
-//     isString: isString,
-//     getCardId: getCardId
-// };
+module.exports = {
+    concatenateStrings: concatenateStrings,
+    getStringLength: getStringLength,
+    getStringFromTemplate: getStringFromTemplate,
+    extractNameFromTemplate: extractNameFromTemplate,
+    getFirstChar: getFirstChar,
+    removeLeadingAndTrailingWhitespaces: removeLeadingAndTrailingWhitespaces,
+    repeatString: repeatString,
+    removeFirstOccurrences: removeFirstOccurrences,
+    unbracketTag: unbracketTag,
+    convertToUpperCase: convertToUpperCase,
+    extractEmails: extractEmails,
+    getRectangleString: getRectangleString,
+    encodeToRot13: encodeToRot13,
+    isString: isString,
+    getCardId: getCardId
+};
