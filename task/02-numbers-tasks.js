@@ -22,8 +22,9 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-    return width * height;
+    throw new Error('Not implemented');
 }
+
 
 /**
  * Returns a circumference of circle given by radius.
@@ -39,7 +40,6 @@ function getRectangleArea(width, height) {
 function getCicleCircumference(radius) {
     throw new Error('Not implemented');
 }
-
 
 /**
  * Returns an average of two given numbers.
