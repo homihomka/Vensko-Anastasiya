@@ -58,7 +58,6 @@ function getAverage(value1, value2) {
     const result = (total / 2) * Number.MAX_SAFE_INTEGER;
     return Number(result.toFixed(2));
 }
-console.log(getAverage(2, 4));
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
@@ -76,7 +75,7 @@ console.log(getAverage(2, 4));
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    return Math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2));
 }
 
 /**
