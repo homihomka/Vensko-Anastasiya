@@ -54,8 +54,11 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    throw new Error('Not implemented');
+    const total = (value1 / Number.MAX_SAFE_INTEGER) + (value2 / Number.MAX_SAFE_INTEGER);
+    const result = (total / 2) * Number.MAX_SAFE_INTEGER;
+    return Number(result.toFixed(2));
 }
+console.log(getAverage(2, 4));
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
